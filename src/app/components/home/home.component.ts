@@ -8,7 +8,7 @@ import { WeatherDataService } from 'src/app/services/weather-data.service';
 })
 export class HomeComponent implements OnInit {
 
-  numberOfLocations: number;
+  numberOfLocations: number = 1;
   lat: String[];
   long: String[];
 
@@ -16,16 +16,21 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.svc.generateLatitude(5).subscribe(
-      data => { this.lat = data.split('\n') },
+  }
+
+  getRandomLocations(num: number) {
+    this.numberOfLocations = num;
+
+    this.svc.generateLatitude(this.numberOfLocations).subscribe(
+      data => { this.lat = data.split('\n'),
+        this.svc.generateLongitude(this.numberOfLocations).subscribe(
+         data => { this.long = data.split('\n'),
+          this.getWeather() },
+          error => { console.log(error) }
+        );
+    },
       error => { console.log(error) }
     );
-
-    this.svc.generateLongitude(5).subscribe(
-      data => { this.long = data.split('\n') },
-      error => { console.log(error) }
-    );
-
   }
 
   getWeather() {

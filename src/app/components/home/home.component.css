@@ -1,7 +1,12 @@
-.input__box {
+.input__box, .city__data {
     margin-top: 30px;
+    padding: 10px;
 }
 
-.city__data {
-    margin-top: 30px;
-}
+/************
+    MAP
+*************/
+mgl-map {
+    height: 150px;
+    width: 100%;
+  }

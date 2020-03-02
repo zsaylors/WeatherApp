@@ -22,5 +22,4 @@ export class WeatherDataService {
   getWeatherData(lat, lon) {
     return this.http.get('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=de10300ebff83ff66eb7a188c336b7b5')
   }
-
 }

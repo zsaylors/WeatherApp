@@ -3,14 +3,23 @@
     <form class="form-inline">
         <div class="form-group mb-2">
           <label class="sr-only">Number of cities:</label>
-          <input type="number" class="form-control" id="number" value="1">
+          <input type="number" class="form-control" id="number" value="1" min="1" max="50"
+          name="numberOfLocations" [(ngModel)]="numberOfLocations">
         </div>
-        <button type="submit" class="btn btn-success mb-2">Go!</button>
+        <button type="submit" class="btn btn-success mb-2" (click)="getRandomLocations(numberOfLocations)">Go!</button>
       </form>
 </div>
 
 <div class="container city__data bg-light">
-
+    <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-12">
+            <mgl-map
+                [style]="'mapbox://styles/mapbox/streets-v9'"
+                [zoom]="[9]"
+                [center]="[-74.50, 40]">
+            </mgl-map>
+        </div>
+    </div>
 </div>
 
 
