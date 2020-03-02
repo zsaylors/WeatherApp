@@ -8,6 +8,7 @@ import { WeatherDataService } from 'src/app/services/weather-data.service';
 })
 export class HomeComponent implements OnInit {
 
+  numberOfLocations: number;
   lat: String[];
   long: String[];
 
@@ -24,9 +25,6 @@ export class HomeComponent implements OnInit {
       data => { this.long = data.split('\n') },
       error => { console.log(error) }
     );
-
-
-
 
   }
 
