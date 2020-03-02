@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,19 @@ import { Injectable } from '@angular/core';
 })
 export class WeatherDataService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  // Returns random coordinates
+  generateLongitude(num) {
+    return this.http.get('https://www.random.org/integers/?num=' + num + 
+                                      '&min=-180&max=180&col=1&base=10&format=plain&rnd=new',  {responseType: 'text'})
+  }
+
+  generateLatitude(num) {
+    return this.http.get('https://www.random.org/integers/?num=' + num + 
+                                      '&min=-90&max=90&col=1&base=10&format=plain&rnd=new', {responseType: 'text'})
+  }
+
+
+
 }
