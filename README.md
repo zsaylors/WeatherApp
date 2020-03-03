@@ -1,6 +1,6 @@
 # Random Weather App
 
-### [Live App](https://github.com/angular/angular-cli)
+### [Live App](https://weatherdata-4918a.web.app/)
 
 
 ## How it works:
@@ -18,7 +18,7 @@
 4. HTML and CSS
 
 
-## Running 
+## How to run
 Download from GitHub, cd to the directory, and follow these steps:
 
 ### Development server
