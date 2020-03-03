@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "weatherdata-4918a": {
+      "hosting": {
+        "WeatherApp": [
+          "weatherdata-4918a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "weatherdata-4918a"
+  }
+}
