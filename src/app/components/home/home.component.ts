@@ -12,10 +12,9 @@ export class HomeComponent implements OnInit {
   numberOfLocations: number = 1;
   lat: String[];
   long: String[];
-  allWeather: any[] = [];
-  newWx: any;
+  allWeather: Weather[] = [];
+  newWx: Weather;
   selected: boolean = false;
-  coord: String;
   selectedLocation: any;
   isLocationSelected: boolean = false;
 
@@ -46,22 +45,17 @@ export class HomeComponent implements OnInit {
     for(let i = 0; i < this.lat.length - 1; i++) {
       this.svc.getWeatherData(this.lat[i], this.long[i]).subscribe(
         data => { console.log(data),
-          
           this.newWx = data
-          this.coord = "[" + this.newWx.lat + ", " + this.newWx.long + "]";
           this.allWeather.push(this.newWx)
-          
           this.isLocationSelected = true;
           this.selectedLocation = this.allWeather[0];
-        
-        
         },
         error => { console.error(error) }
       );
     }
   }
 
-  selectedWx(wx: any) {
+  selectedWx(wx: Weather) {
     this.isLocationSelected = true;
     this.selectedLocation = wx;
   }

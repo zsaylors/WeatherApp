@@ -1,5 +1,7 @@
 export class Weather {
     name: String;
+    lat: number;
+    lon: number;
     timezone: number;
     main: String;
     description: String;
@@ -17,9 +19,10 @@ export class Weather {
     sunrise: number;
     sunset: number;
 
-
     constructor(
         name?: String,
+        lat?: number,
+        lon?: number,
         timezone?: number,
         main?: String,
         description?: String,
@@ -38,6 +41,8 @@ export class Weather {
         sunset?: number
         ) {
         this.name = name;
+        this.lat = lat;
+        this.lon = lon;
         this.timezone = timezone;
         this.main = main;
         this.description = description;

@@ -15,7 +15,7 @@
 <div class="container map__and__choices">
     <div class="row">
 
-        <!-- SELECTE LOCATION -->
+        <!-- SELECTED LOCATION -->
         <div class="col-lg-6 col-md-7 col-sm-12 bg-light selected__location rounded" *ngIf="isLocationSelected">
             <div class="container">
                 <div class="row">
@@ -29,14 +29,14 @@
                     <div>
                         <!-- Location Name -->
                         <div *ngIf="selectedLocation.name == ''">
-                            <h4>Unnamed Location</h4>
+                            <h5>Unnamed Location</h5>
+                            <hr>
                         </div>
                         <div *ngIf="selectedLocation.name != ''">
                             <h4>{{selectedLocation.name}}</h4>
                         </div>
 
                         <!-- Current Conditions -->
-                        <hr>
                         <h6>Current Conditions: {{selectedLocation.weather[0].main}}</h6>
 
                         <!-- Temp -->
@@ -56,7 +56,7 @@
             </div> 
         </div>
 
-        <!-- LIST OF LOCATIONs -->
+        <!-- LIST OF LOCATIONS -->
         <div class="col-lg-6 col-md-5 col-sm12">
             <div class="container location__list" *ngIf="selected">
                 <div class="row location__card rounded shadow-sm" *ngFor="let wx of allWeather" (click)="selectedWx(wx)">
