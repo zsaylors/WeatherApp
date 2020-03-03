@@ -16,6 +16,7 @@
 2. Angular and Typescript
 3. Bootstrap
 4. HTML and CSS
+5. Firebase
 
 
 ## How to run
